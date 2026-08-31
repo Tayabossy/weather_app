@@ -1,0 +1,54 @@
+name: weather_app
+description: "Application meteo interactive - Examen de Developpement Mobile, L3 Geomatique UIDT 2026."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Libelles systeme en francais (bouton retour, selection de texte, dates)
+  flutter_localizations:
+    sdk: flutter
+
+  # Icones style iOS
+  cupertino_icons: ^1.0.8
+
+  # Client HTTP pour interroger l'API OpenWeatherMap
+  dio: ^5.11.0
+
+  # Gestion d'etat globale (theme + experience meteo)
+  provider: ^6.1.5+1
+
+  # Carte interactive basee sur les tuiles OpenStreetMap (aucune cle requise)
+  flutter_map: ^8.3.2
+  latlong2: ^0.10.1
+
+  # Chargement de la cle API depuis le fichier .env
+  flutter_dotenv: ^6.0.1
+
+  # Persistance du mode clair / sombre
+  shared_preferences: ^2.5.5
+
+  # Jauge circulaire animee de l'ecran de chargement
+  percent_indicator: ^4.2.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Le fichier .env est embarque comme asset : c'est ainsi que flutter_dotenv
+  # le lit a l'execution. Il reste ignore par git (voir .gitignore).
+  assets:
+    - .env
